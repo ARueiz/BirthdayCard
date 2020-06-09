@@ -1,8 +1,11 @@
 <!--index.html-->
-<!doctype HTML>
+<!Doctype HTML>
 <html>
-<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script>
+<head>
+    <meta charset="UTF-8"></meta>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script>
+</head>
   <body style='margin : 0px; overflow: hidden;'>
     <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
       <a-marker preset='hiro'>
@@ -11,11 +14,14 @@
         <!--環境光源-->
         <a-light  type="ambient" color="white" ></a-light>
         <!--加上文字-->
-        <a-entity text="width: 5; value:Happy Birthday To You" position='1.4 2.3 0'></a-entity>
+        <a-text value="李孟璇"    font="model/name-msdf.json" font-image="model/name-msdf.png" 
+                color="#33C3F0" scale="2 2 2" negate="false" position='-0.2 2.6 0'></a-text>
+        <a-text value="生日快樂!" font="model/HB-msdf.json" font-image="model/HB-msdf.png" 
+                color="#33C3F0" scale="2 2 2" negate="false" position='-0.4 2.3 0'></a-text>
         <!--加上3D模型-->
         <a-entity id='gltf' gltf-model="url(model/scene.gltf)" position='0 0.5 0' scale='1.0 1.0 1.0'></a-entity>
         <!--加上音樂-->
-        <a-sound src="src: url(HB.mp3)" autoplay="true" position="0 2 5"></a-sound>
+        <a-sound src="src: url(HB.mp3)" autoplay="true" loop="true" volume="0.5"></a-sound>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
